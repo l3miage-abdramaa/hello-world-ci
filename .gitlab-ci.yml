@@ -1,0 +1,22 @@
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  image: maven:3.8.1-jdk-11
+  script:
+    - mvn clean package
+  artifacts:
+    paths:
+      - target/*.jar
+  only:
+    - main
+
+test:
+  stage: test
+  image: maven:3.8.1-jdk-11
+  script:
+    - mvn test
+  only:
+    - main
