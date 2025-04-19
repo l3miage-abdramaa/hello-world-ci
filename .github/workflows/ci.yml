@@ -31,10 +31,3 @@ jobs:
      # 3.4) Lancer les tests unitaires
      - name: Run tests
        run: mvn test
-
-     # (Optionnel) 3.5) Publier le JAR pour réutilisation
-     - name: Upload JAR artifact
-       uses: actions/upload-artifact@v3
-       with:
-        name: app-jar
-        path: target/*.jar
