@@ -53,5 +53,5 @@ jobs:
 
      - name: Push to Docker Hub
        run: | 
-         docker push ${{ github.DOCKERHUB_USERNAME }}/hello-world:${{ github.sha }}
-         docker push ${{ github.DOCKERHUB_USERNAME }}/hello-world:latest
+         docker push ${{ secrets.DOCKERHUB_USERNAME }}/hello-world:${{ github.sha }}
+         docker push ${{ secrets.DOCKERHUB_TOKEN }}/hello-world:latest
